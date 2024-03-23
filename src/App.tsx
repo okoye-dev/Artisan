@@ -1,10 +1,19 @@
-import { FC } from "react"
-const App: FC<> = () = {
-  return (
-    <>
-      <h1>hey</h1>
-    </>
-  )
-}
+import React, { FC } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Landing from "./pages/Landing";
+import SignUp from "./pages/SignUp";
 
-export default App
+interface IAppProps {}
+
+const App: FC<IAppProps> = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
+export default App;
