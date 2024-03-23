@@ -8,7 +8,7 @@ import nails from "../assets/nails.jpeg";
 
 const Landing: FC = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden p-3">
       <Loading />
       <header className="landing-fade flex justify-between items-center overflow-hidden">
         <img src={logo} alt="logo" className="w-20 z-10" />
