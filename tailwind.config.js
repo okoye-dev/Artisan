@@ -18,8 +18,11 @@ export default {
     extend: {
       colors: {
         blue: "#009FCA",
-      }
+      },
+      backgroundImage: {
+        "hero-pattern": "url('/img/.svg')",
+      },
     },
     plugins: [],
-  }
-} 
+  },
+};

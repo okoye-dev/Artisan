@@ -12,10 +12,10 @@ const Loading: FC = () => {
     <div
       className={`absolute opacity-0 ${
         loading &&
-        "background-fade flex justify-center items-center h-screen w-screen bg-white"
+        "background-fade flex justify-center items-center h-screen w-screen bg-white z-20"
       }`}
     >
-      <img className="logo-animation" src={logo} alt="logo" />
+      <img className="logo-animation w-28" src={logo} alt="logo"/>
     </div>
   );
 };

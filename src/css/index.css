@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Raleway", serif;
+}
+.hero {
+  font-family: "Cardo";
+}
+.kaushan {
+  font-family: "Kaushan Script", serif;
+}
+.svg-img {
+  clip-path: url("");
+}
 @keyframes fadeInUp {
   0% {
     transform: translateY(30%);
