@@ -1,8 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
+export default {
+  content: ["./src/**/*.{js,jsx,ts,tsx,html,css}"],
   theme: {
-    extend: {},
-  },
-  plugins: [],
-};
+    screens: {
+      sm: { min: "360px", max: "799px" },
+      // => @media (min-width: 360px) { ... }
+
+      ipad: "700px",
+      // => @media (min-width: 800px) { ... }
+
+      md: "800px",
+      // => @media (min-width: 800px) { ... }
+
+      lg: "1440px",
+      // => @media (min-width: 1440px) { ... }
+    },
+    extend: {
+      colors: {
+        blue: "#009FCA",
+      }
+    },
+    plugins: [],
+  }
+} 
