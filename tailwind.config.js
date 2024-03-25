@@ -15,12 +15,19 @@ export default {
       lg: "1440px",
       // => @media (min-width: 1440px) { ... }
     },
+
     extend: {
       colors: {
         blue: "#009FCA",
       },
       backgroundImage: {
         "hero-pattern": "url('/img/.svg')",
+      },
+      backgroundSize: {
+        large: "300%",
+      },
+      boxShadow: {
+        custom: "rgba(100, 100, 111, 0.1) 0px 7px 29px 0px",
       },
     },
     plugins: [],

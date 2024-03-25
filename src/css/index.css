@@ -47,7 +47,7 @@
 }
 
 .background-fade {
-  animation: 3s fadeOut;
+  animation: 2s fadeOut;
 }
 .logo-animation {
   animation: 1.5s fadeInUp;

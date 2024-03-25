@@ -8,11 +8,20 @@ import nails from "../assets/nails.jpeg";
 import shipping from "../assets/svgs/shipping.svg";
 import variety from "../assets/svgs/variety.svg";
 import quality from "../assets/svgs/quality.svg";
+import appStore from "../assets/svgs/353095.svg";
+import playStore from "../assets/svgs/291947.svg";
+import { GrAppleAppStore } from "react-icons/gr";
+import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Landing: FC = () => {
+  const navigate = useNavigate();
+  const goToHome = () => {
+    navigate("/home");
+  };
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000);
+    setTimeout(() => setLoading(false), 2000);
   }, []);
 
   const [shadow, setShadow] = useState(false);
@@ -54,11 +63,19 @@ const Landing: FC = () => {
     },
   ];
 
+  const [hover, setHover] = useState(true);
+  const handleHoverTrue = () => {
+    setHover(true);
+  };
+  const handleHoverFalse = () => {
+    setHover(false);
+  };
+
   return (
     <div className="overflow-x-hidden">
       <Loading />
       <div
-        className={`opacity-0 transition-all duration-500 ${
+        className={`opacity-0 transition-all duration-300 ${
           !loading && "opacity-100"
         } `}
       >
@@ -77,7 +94,7 @@ const Landing: FC = () => {
             <img
               src={clipper}
               alt="clippers"
-              className="border-2 h-[13rem] rounded-tr-[3rem] rounded-bl-[3rem] object-cover translate-x-4"
+              className="h-[13rem] ipad:h-[15rem] rounded-tr-[3rem] rounded-bl-[3rem] object-cover translate-x-4 shadow-custom"
             />
           </span>
           <div className="flex flex-col">
@@ -85,21 +102,21 @@ const Landing: FC = () => {
               <img
                 src={chairArtisan}
                 alt="chairArtisan"
-                className="border-2 rounded-tl-[1rem] rounded-br-[1rem] object-cover h-[7rem] z-10 -translate-y-7"
+                className="rounded-tl-[1rem] rounded-br-[1rem] object-cover h-[7rem] ipad:h-[9rem] z-10 -translate-y-7 shadow-custom"
               />
             </span>
             <span className="z-20">
               <img
                 src={nails}
                 alt="nails"
-                className="border-2 rounded-tr-[1rem] rounded-bl-[1rem] object-cover h-[10rem]"
+                className="rounded-tr-[1rem] rounded-bl-[1rem] object-cover sm:h-[10rem] ipad:h-[12rem] shadow-custom"
               />
             </span>
           </div>
         </div>
         <div className="px-6">
           <section className="w-full flex flex-col justify-center items-center">
-            <h1 className="hero text-5xl font-extrabold flex flex-col items-center text-center mt-20 z-10">
+            <h1 className="hero sm:text-5xl ipad:text-6xl font-extrabold flex flex-col items-center text-center mt-20 z-10">
               Book your appointments
               <span className="font-normal kaushan text-orange-600 relative">
                 in one go
@@ -108,7 +125,7 @@ const Landing: FC = () => {
                 with <span className="text-blue">artisan</span>
               </div>
             </h1>
-            <div className="mx-5">
+            <div className="mx-5 ipad:text-xl">
               <p className="mt-10">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Maiores nisi dicta expedita temporibus corporis quis inventore
@@ -116,18 +133,36 @@ const Landing: FC = () => {
                 laudantium esse facilis nihil illum.
               </p>
               <div className="flex justify-start w-full">
-                <button className=" bg-gradient-to-r from-blue to-purple-500 rounded-lg py-3 px-8 text-white font-semibold mt-4 flex">
+                <button
+                  onMouseOver={handleHoverFalse}
+                  onMouseLeave={handleHoverTrue}
+                  className={`transition-all duration-300 ease-in-out py-3 pl-8 ipad:py-5 ipad:hover:py-7 ipad:hover:pl-10 ipad:hover:pr-8 hover:pr-5 text-white font-semibold mt-4 flex justify-center items-center gap-1 bg-gradient-to-r bg-large bg-[left] hover:bg-[right] from-blue via-purple-500 via-[40%] to-black rounded-lg hover:scale-105 shadow-lg hover:shadow-2xl`}
+                >
                   Get the App
+                  <span
+                    className={`flex justify-center border-[1px] rounded-lg p-[1px] transition-all duration-500 ease-in-out ${
+                      hover ? "opacity-0 -translate-x-10" : "ml-1 translate-x-0"
+                    }`}
+                  >
+                    <GrAppleAppStore />
+                  </span>
+                  <span
+                    className={`transition-all duration-[750ms]  ease-in-out flex justify-center ${
+                      hover ? "opacity-0 -translate-x-10" : "translate-x-0"
+                    }`}
+                  >
+                    <IoLogoGooglePlaystore size={"1.25rem"} />
+                  </span>
                 </button>
               </div>
             </div>
           </section>
         </div>
-        <section className="rounded-t-[2rem] bg-gradient-to-b from-blue to-purple-700 to-[80%]  mt-20 p-6 flex flex-col justify-center items-center z-20">
-          <h1 className="font-bold text-3xl text-white mb-10">
+        <section className="rounded-t-[2rem] bg-gradient-to-b from-blue to-purple-700 to-[80%] mt-20 ipad:p-10 p-6 flex flex-col justify-center items-center z-20">
+          <h1 className="font-bold text-3xl ipad:text-4xl text-white mb-10">
             Why use artisan?
           </h1>
-          <div className="m-2 gap-10 flex flex-col justify-center items-center">
+          <div className="m-2 gap-10 flex flex-col justify-center items-center pb-20">
             {whyUseArtisanList.map((obj, i) => (
               <div
                 key={i}
@@ -136,14 +171,16 @@ const Landing: FC = () => {
                 <img
                   src={obj.icon}
                   alt={obj.header}
-                  className={`w-10 bg-white rounded-full ${
+                  className={`w-10 bg-white rounded-full shadow-lg ${
                     obj.id == 0 ? " p-0" : "p-2"
                   }`}
                 />
-                <h1 className="text-center text-2xl font-medium kaushan">
+                <h1 className="text-center text-2xl ipad:text-3xl font-medium kaushan">
                   {obj.header}
                 </h1>
-                <p className="text-xs w-3/4 text-center">{obj.content}</p>
+                <p className="text-xs ipad:text-sm w-3/4 text-center">
+                  {obj.content}
+                </p>
                 {obj.id !== 0 && (
                   <div className="mt-10 w-full h-[1px] bg-white"></div>
                 )}
@@ -151,7 +188,28 @@ const Landing: FC = () => {
             ))}
           </div>
         </section>
-        <section className="rounded-t-[2rem] flex justify-center items-center mt-20 p-6 z-20">download here, or try online</section>
+        <section className="rounded-t-[2rem] flex justify-center items-center -translate-y-12 py-5 ipad:py-8 z-30 bg-white sm:flex-col ipad:flex-row">
+          <div className="flex gap-2 mb-4 justify-center items-center">
+            <img
+              src={appStore}
+              alt="download on appstore"
+              className="w-28 hover:scale-105 transition-all duration-300 ease-in-out ipad:translate-y-2"
+            />
+            <img
+              src={playStore}
+              alt="download on playstore"
+              className="w-[8.35rem] hover:scale-105 transition-all duration-300 ease-in-out  ipad:translate-y-2"
+            />
+          </div>
+          <span className="h-[1px] bg-black/30 w-3/4 ipad:hidden"></span>
+          <button
+            onClick={goToHome}
+            className={`ipad:ml-8 flex justify-center items-center text-white font-semibold transiton-all duration-500 ease-in-out m-3 px-8 py-3 bg-gradient-to-r bg-large bg-[left] hover:bg-[right] from-blue via-purple-500 via-[40%] to-black rounded-lg hover:scale-105 shadow-lg hover:shadow-2xl`}
+          >
+            Continue on web
+          </button>
+          <p className="text-xs absolute bottom-0 z-20">All rights reserved.</p>
+        </section>
       </div>
     </div>
   );
