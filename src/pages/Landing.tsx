@@ -10,8 +10,9 @@ import variety from "../assets/svgs/variety.svg";
 import quality from "../assets/svgs/quality.svg";
 import appStore from "../assets/svgs/353095.svg";
 import playStore from "../assets/svgs/291947.svg";
-import GetTheAppButton from "../components/GetTheAppButton"
+import GetTheAppButton from "../components/GetTheAppButton";
 import { useNavigate } from "react-router-dom";
+import { IoMdClose } from "react-icons/io";
 
 const Landing: FC = () => {
   const navigate = useNavigate();
@@ -62,6 +63,7 @@ const Landing: FC = () => {
     },
   ];
 
+  const [navOpen, setNavOpen] = useState(false);
   return (
     <div className="overflow-x-hidden">
       <Loading />
@@ -71,19 +73,45 @@ const Landing: FC = () => {
         } `}
       >
         <header
-          className={`transition-all duration-300 ease-in-out px-2 py-1 landing-fade flex justify-between lg:justify-center items-center overflow-hidden lg:min-h-20 fixed w-full bg-gradient-to-r from-white to-white/70 z-[9998] top-0 backdrop-blur-md ${
+          className={`transition-all duration-300 ease-in-out px-2 py-1 landing-fade flex justify-between lg:justify-center items-center lg:min-h-20 fixed w-full bg-gradient-to-r from-white to-white/70 z-[9998] top-0 backdrop-blur-md lg:px-0 ${
             shadow && "shadow-lg"
-          }`}
+          }
+          `}
         >
-          <img src={logo} alt="logo" className="w-20 z-10 p-2 lg:absolute left-10 top-2" />
-          <div className="lg:hidden p-6 rounded-full cursor-pointer z-10">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-20 z-10 p-2 lg:absolute left-10 top-2"
+          />
+
+          <div
+            className="lg:hidden p-6 rounded-full cursor-pointer"
+            onClick={() => {
+              setNavOpen(true);
+            }}
+          >
             <RiMenu4Line size={"1.5rem"} />
           </div>
-          <nav className="hidden lg:flex z-[9998] justify-center gap-[5vw] items-center w-3/5">
+          <nav
+            className={`transition-all duration-300 ease-in-out lg:flex justify-center gap-[5vw] items-center w-3/5 sm:flex sm:flex-col ipad:flex-col sm: absolute sm:z-[9997] sm:h-screen ipad:h-screen sm:bg-white ipad:bg-white sm:gap-16 ipad:gap-16 sm:top-0 ipad:top-0 sm:right-0 ipad:right-0 ipad:flex sm:shadow-xl ipad:shadow-xl ipad:text-xl ${
+              navOpen ? "translate-x-0" : "translate-x-[90vw]"
+            }`}
+          >
+            <span
+              className="absolute right-4 top-3 p-3 rounded-full"
+              onClick={() => {
+                setNavOpen(false);
+              }}
+            >
+              <IoMdClose size={"2rem"} />
+            </span>
             <a className="text-black/80 font-bold">Home</a>
             <a className="text-black/80 font-bold">Categories</a>
             <a className="text-black/80 font-bold">Nearby</a>
           </nav>
+          <button className="sm:hidden ipad:hidden transition-all duration-300 ease-in-out bg-gradient-to-tr from-black via-black via-[40%] to-purple-700 rounded-full px-6 py-3 hover:scale-105 text-white">
+            Download Now
+          </button>
         </header>
         <div className="flex justify-center relative mt-36">
           <span className="z-30">
@@ -129,7 +157,7 @@ const Landing: FC = () => {
                 laudantium esse facilis nihil illum.
               </p>
               <div className="flex justify-start ipad:justify-center w-full">
-                <GetTheAppButton/>
+                <GetTheAppButton />
               </div>
             </div>
           </section>
