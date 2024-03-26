@@ -113,55 +113,57 @@ const Landing: FC = () => {
             Download Now
           </button>
         </header>
-        <div className="flex justify-center relative mt-36">
-          <span className="z-30">
-            <img
-              src={clipper}
-              alt="clippers"
-              className="h-[13rem] ipad:h-[15rem] rounded-tr-[3rem] rounded-bl-[3rem] object-cover translate-x-4 shadow-custom"
-            />
-          </span>
-          <div className="flex flex-col">
-            <span>
+        <section className="lg:flex justify-center">
+          <div className="flex justify-center relative mt-36">
+            <span className="z-30">
               <img
-                src={chairArtisan}
-                alt="chairArtisan"
-                className="rounded-tl-[1rem] rounded-br-[1rem] object-cover h-[7rem] ipad:h-[9rem] z-10 -translate-y-7 shadow-custom"
+                src={clipper}
+                alt="clippers"
+                className="h-[13rem] ipad:h-[15rem] lg:h-[18rem] rounded-tr-[3rem] rounded-bl-[3rem] object-cover translate-x-4 shadow-custom"
               />
             </span>
-            <span className="z-20">
-              <img
-                src={nails}
-                alt="nails"
-                className="rounded-tr-[1rem] rounded-bl-[1rem] object-cover sm:h-[10rem] ipad:h-[12rem] shadow-custom"
-              />
-            </span>
-          </div>
-        </div>
-        <div className="px-6">
-          <section className="w-full flex flex-col justify-center items-center">
-            <h1 className="hero sm:text-5xl ipad:text-6xl font-extrabold flex flex-col items-center text-center mt-20 z-10">
-              Book your appointments
-              <span className="font-normal kaushan text-orange-600 relative">
-                in one go
+            <div className="flex flex-col">
+              <span>
+                <img
+                  src={chairArtisan}
+                  alt="chairArtisan"
+                  className="rounded-tl-[1rem] rounded-br-[1rem] object-cover h-[7rem] ipad:h-[9rem] lg:h-[12rem] z-10 -translate-y-7 shadow-custom"
+                />
               </span>
-              <div className="hero relative">
-                with <span className="text-blue">artisan</span>
-              </div>
-            </h1>
-            <div className="mx-5 md:text-lg md:text-center">
-              <p className="mt-10">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Maiores nisi dicta expedita temporibus corporis quis inventore
-                sapiente nesciunt mollitia ab? Harum ea ipsum quam hic
-                laudantium esse facilis nihil illum.
-              </p>
-              <div className="flex justify-start ipad:justify-center w-full">
-                <GetTheAppButton />
-              </div>
+              <span className="z-20">
+                <img
+                  src={nails}
+                  alt="nails"
+                  className="rounded-tr-[1rem] rounded-bl-[1rem] object-cover sm:h-[10rem] ipad:h-[12rem] lg:h-[15rem] shadow-custom"
+                />
+              </span>
             </div>
-          </section>
-        </div>
+          </div>
+          <div className="px-6 w-3/5">
+            <section className="flex flex-col justify-center items-center">
+              <h1 className="hero sm:text-5xl ipad:text-6xl lg:text-5xl font-extrabold flex flex-col items-center text-center mt-20 z-10 lg:mt-40">
+                Book your appointments
+                <span className="font-normal kaushan text-orange-600 relative">
+                  in one go
+                </span>
+                <div className="hero relative">
+                  with <span className="text-blue">artisan</span>
+                </div>
+              </h1>
+              <div className="mx-5 md:text-lg md:text-center lg:text-start">
+                <p className="mt-10">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Maiores nisi dicta expedita temporibus corporis quis inventore
+                  sapiente nesciunt mollitia ab? Harum ea ipsum quam hic
+                  laudantium esse facilis nihil illum.
+                </p>
+                <div className="flex justify-start ipad:justify-center w-full">
+                  <GetTheAppButton />
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
         <section className="rounded-t-[2rem] bg-gradient-to-b from-blue to-purple-700 to-[80%] mt-20 ipad:p-10 p-6 flex flex-col justify-center items-center z-20">
           <h1 className="font-bold text-3xl ipad:text-4xl text-white mb-10">
             Why use artisan?
