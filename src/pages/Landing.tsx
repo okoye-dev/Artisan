@@ -51,13 +51,13 @@ const Landing: FC = () => {
     {
       header: "Variety",
       content:
-        "Explore a diverse range of skilled artisans at your fingertips. Whether you need a stylist, makeup artist, or just a quick haircut, our platform connects you with talented professionals tailored to your specific needs and preferences.",
+        "Explore a diverse range of skilled artisans at your fingertips. Whether you need a stylist, makeup artist, or just a quick haircut, we connect you with talented professionals tailored to your specific needs and preferences.",
       icon: variety,
     },
     {
       header: "Quality Assurance",
       content:
-        "Rest assured knowing that all artisans on our platform are thoroughly vetted and reviewed by previous clients. Experience top-notch service and impeccable craftsmanship every time you book through our app",
+        "Rest assured knowing that all artisans on our platform are thoroughly vetted and reviewed by previous clients. Experience top-notch service and impeccable craftsmanship every time you book through our app.",
       icon: quality,
       id: 0,
     },
@@ -90,11 +90,11 @@ const Landing: FC = () => {
               setNavOpen(true);
             }}
           >
-            <RiMenu4Line size={"1.5rem"} />
+            <RiMenu4Line size={"1.5rem"} className="md:hidden" />
           </div>
           <nav
-            className={`transition-all duration-300 ease-in-out lg:flex justify-center gap-[5vw] items-center w-3/5 sm:flex sm:flex-col ipad:flex-col sm: absolute sm:z-[9997] sm:h-screen ipad:h-screen sm:bg-white ipad:bg-white sm:gap-16 ipad:gap-16 sm:top-0 ipad:top-0 sm:right-0 ipad:right-0 ipad:flex sm:shadow-xl ipad:shadow-xl ipad:text-xl ${
-              navOpen ? "translate-x-0" : "translate-x-[90vw]"
+            className={`transition-all duration-300 ease-in-out lg:flex lg:flex-row justify-center gap-[5vw] items-center w-3/5 sm:flex sm:flex-col ipad:flex-col sm: absolute sm:z-[9998] sm:h-screen ipad:h-screen md:h-fit md:py-6 md:w-full md:text-lg md:shadow-none md:gap-[8vw] md:flex md:flex-row sm:bg-white sm:gap-16 ipad:gap-16 sm:top-0 ipad:top-0 sm:right-0 ipad:right-0 sm:shadow-xl ipad:shadow-xl ipad:text-xl ${
+              navOpen ? "sm:translate-x-0" : "sm:translate-x-[90vw]"
             }`}
           >
             <span
@@ -103,7 +103,7 @@ const Landing: FC = () => {
                 setNavOpen(false);
               }}
             >
-              <IoMdClose size={"2rem"} />
+              <IoMdClose size={"2rem"} className="md:hidden" />
             </span>
             <a className="text-black/80 font-bold">Home</a>
             <a className="text-black/80 font-bold">Categories</a>
@@ -139,7 +139,7 @@ const Landing: FC = () => {
               </span>
             </div>
           </div>
-          <div className="px-6 w-3/5">
+          <div className="px-6 lg:w-3/5 flex justify-center">
             <section className="flex flex-col justify-center items-center">
               <h1 className="hero sm:text-5xl ipad:text-6xl lg:text-5xl font-extrabold flex flex-col items-center text-center mt-20 z-10 lg:mt-40">
                 Book your appointments
@@ -157,7 +157,7 @@ const Landing: FC = () => {
                   sapiente nesciunt mollitia ab? Harum ea ipsum quam hic
                   laudantium esse facilis nihil illum.
                 </p>
-                <div className="flex justify-start ipad:justify-center w-full">
+                <div className="flex justify-start lg:mx-5 w-full">
                   <GetTheAppButton />
                 </div>
               </div>
@@ -168,27 +168,25 @@ const Landing: FC = () => {
           <h1 className="font-bold text-3xl ipad:text-4xl text-white mb-10">
             Why use artisan?
           </h1>
-          <div className="m-2 gap-10 flex flex-col justify-center items-center pb-20">
+          <div className="m-2 gap-10 flex ipad:flex-wrap ipad:flex-row sm:flex-col justify-center items-center pb-20">
             {whyUseArtisanList.map((obj, i) => (
               <div
                 key={i}
-                className="text-white flex flex-col justify-center items-center gap-2"
+                className="text-white flex flex-col justify-center items-center gap-2 ipad:bg-white/20 ipad:p-4 ipad:rounded-lg ipad:w-2/5 ipad:pb-8 hover:shadow-custom2 transition-all duration-500 ease-in-out hover:scale-[1.01]"
               >
                 <img
                   src={obj.icon}
                   alt={obj.header}
                   className={`w-10 bg-white rounded-full shadow-lg ${
-                    obj.id == 0 ? " p-0" : "p-2"
+                    obj.id == 0 ? "p-0" : "p-2"
                   }`}
                 />
-                <h1 className="text-center text-2xl ipad:text-3xl font-medium kaushan">
+                <h1 className="text-center text-2xl ipad:text-xl font-medium kaushan">
                   {obj.header}
                 </h1>
-                <p className="text-xs ipad:text-sm w-3/4 text-center">
-                  {obj.content}
-                </p>
+                <p className="text-xs w-3/4 text-center">{obj.content}</p>
                 {obj.id !== 0 && (
-                  <div className="mt-10 w-full h-[1px] bg-white"></div>
+                  <div className="mt-10 w-full h-[1px] bg-white ipad:hidden"></div>
                 )}
               </div>
             ))}
