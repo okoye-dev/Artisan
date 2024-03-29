@@ -16,8 +16,8 @@ import { IoMdClose } from "react-icons/io";
 
 const Landing: FC = () => {
   const navigate = useNavigate();
-  const goToHome = () => {
-    navigate("/home");
+  const goToGetStarted = () => {
+    navigate("/get-started");
   };
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -150,14 +150,14 @@ const Landing: FC = () => {
                   with <span className="text-blue">artisan</span>
                 </div>
               </h1>
-              <div className="mx-5 md:text-lg md:text-center lg:text-start">
+              <div className="mx-5 md:text-lg text-center">
                 <p className="mt-10">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Maiores nisi dicta expedita temporibus corporis quis inventore
                   sapiente nesciunt mollitia ab? Harum ea ipsum quam hic
                   laudantium esse facilis nihil illum.
                 </p>
-                <div className="flex justify-start lg:mx-5 w-full">
+                <div className="flex justify-center lg:mx-5 w-full">
                   <GetTheAppButton />
                 </div>
               </div>
@@ -184,9 +184,9 @@ const Landing: FC = () => {
                 <h1 className="text-center text-2xl ipad:text-xl font-medium kaushan">
                   {obj.header}
                 </h1>
-                <p className="text-xs w-3/4 text-center">{obj.content}</p>
+                <p className="text-xs w-3/4 text-center sm:pb-10 ipad:pb-0">{obj.content}</p>
                 {obj.id !== 0 && (
-                  <div className="mt-10 w-full h-[1px] bg-white ipad:hidden"></div>
+                  <div className="mt-10 sm:mt-0 w-full h-[1px] bg-white ipad:hidden"></div>
                 )}
               </div>
             ))}
@@ -207,7 +207,7 @@ const Landing: FC = () => {
           </div>
           <span className="h-[1px] bg-black/30 w-3/4 ipad:hidden"></span>
           <button
-            onClick={goToHome}
+            onClick={goToGetStarted}
             className={`ipad:ml-8 flex justify-center items-center text-white font-semibold transiton-all duration-500 ease-in-out m-3 px-8 py-3 bg-gradient-to-r bg-large bg-[left] hover:bg-[right] from-blue via-purple-500 via-[40%] to-black rounded-lg hover:scale-105 shadow-lg hover:shadow-2xl`}
           >
             Continue on web
