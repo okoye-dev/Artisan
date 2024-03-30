@@ -4,6 +4,8 @@ import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
 import GetStarted from "./pages/GetStarted";
 import HomePage from "./pages/HomePage"
+import Categories from "./pages/Categories";
+import Nearby from "./pages/Nearby";
 
 interface IAppProps {}
 
@@ -15,6 +17,8 @@ const App: FC<IAppProps> = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/nearby" element={<Nearby />} />
       </Routes>
     </BrowserRouter>
   );
