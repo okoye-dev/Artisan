@@ -184,7 +184,9 @@ const Landing: FC = () => {
                 <h1 className="text-center text-2xl ipad:text-xl font-medium kaushan">
                   {obj.header}
                 </h1>
-                <p className="text-xs w-3/4 text-center sm:pb-10 ipad:pb-0">{obj.content}</p>
+                <p className="text-xs w-3/4 text-center sm:pb-10 ipad:pb-0">
+                  {obj.content}
+                </p>
                 {obj.id !== 0 && (
                   <div className="mt-10 sm:mt-0 w-full h-[1px] bg-white ipad:hidden"></div>
                 )}
@@ -208,7 +210,7 @@ const Landing: FC = () => {
           <span className="h-[1px] bg-black/30 w-3/4 ipad:hidden"></span>
           <button
             onClick={goToGetStarted}
-            className={`ipad:ml-8 flex justify-center items-center text-white font-semibold transiton-all duration-500 ease-in-out m-3 px-8 py-3 bg-gradient-to-r bg-large bg-[left] hover:bg-[right] from-blue via-purple-500 via-[40%] to-black rounded-lg hover:scale-105 shadow-lg hover:shadow-2xl`}
+            className={`ipad:ml-8 flex justify-center items-center text-white font-semibold transiton-all duration-500 ease-in-out m-3 px-8 py-3 bg-gradient-to-r bg-large bg-[left] hover:bg-[right] from-blue via-purple-500 via-[40%] to-black rounded-2xl hover:scale-105 shadow-lg hover:shadow-2xl`}
           >
             Continue on web
           </button>

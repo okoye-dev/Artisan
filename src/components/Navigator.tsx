@@ -7,7 +7,7 @@ import nearby from "../assets/svgs/nearby.svg";
 const Navigator: FC = () => {
   const navigate = useNavigate();
   return (
-    <div className="fixed bottom-5 bg-gradient-to-b from-black/90 to-purple-950/80 rounded-full shadow-lg w-fit flex justify-center items-center py-2 px-6 gap-5 text-white text-[0.65rem] backdrop-blur-md">
+    <div className="fixed bottom-5 bg-gradient-to-b from-black/90 to-purple-950/80 rounded-full shadow-lg w-fit flex justify-center items-center py-2 px-6 gap-5 text-white text-[0.65rem] ipad:text-xs backdrop-blur-md">
       <button
         onClick={() => navigate("/home")}
         className="flex flex-col justify-center items-center p-1"

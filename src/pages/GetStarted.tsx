@@ -4,16 +4,19 @@ import { useNavigate } from "react-router-dom";
 const Home: FC = () => {
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState("client");
+
   function clientActive() {
-    isActive == "client"
+    isActive === "client"
       ? navigate("/home", { state: "client" })
       : setIsActive("client");
   }
+
   function artisanActive() {
-    isActive == "artisan"
+    isActive === "artisan"
       ? navigate("/home", { state: "artisan" })
       : setIsActive("artisan");
   }
+  
   return (
     <div className="w-screen h-screen text-black text-3xl font-bold flex flex-col justify-around items-center text-center">
       Get Started
@@ -21,7 +24,7 @@ const Home: FC = () => {
         <div
           onClick={clientActive}
           className={`transition-all duration-300 ease-in-out z-20 h-12 w-32 flex justify-center items-center ${
-            isActive == "client" && "text-white"
+            isActive === "client" && "text-white"
           }`}
         >
           Client
@@ -29,7 +32,7 @@ const Home: FC = () => {
         <div
           onClick={artisanActive}
           className={`transition-all duration-300 ease-in-out z-20 h-12 w-32 flex justify-center items-center ${
-            isActive == "artisan" && "text-white"
+            isActive === "artisan" && "text-white"
           }
           `}
         >

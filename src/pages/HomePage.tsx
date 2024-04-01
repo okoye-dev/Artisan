@@ -37,7 +37,6 @@ const componentName: FC = () => {
         </section>
       </div>
       <AppointmentCarousel />
-
       <Navigator />
     </div>
   );

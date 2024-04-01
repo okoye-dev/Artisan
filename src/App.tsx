@@ -7,6 +7,8 @@ import HomePage from "./pages/HomePage";
 import Categories from "./pages/Categories";
 import Nearby from "./pages/Nearby";
 import ArtisanProfile from "./pages/ArtisanProfile";
+import YourOrder from "./pages/YourOrder";
+import PaymentOptions from "./pages/PaymentOptions";
 
 interface IAppProps {}
 
@@ -21,6 +23,8 @@ const App: FC<IAppProps> = () => {
         <Route path="/categories" element={<Categories />} />
         <Route path="/nearby" element={<Nearby />} />
         <Route path="/artisan-profile" element={<ArtisanProfile />} />
+        <Route path="/your-order" element={<YourOrder />} />
+        <Route path="/payment-options" element={<PaymentOptions />} />
       </Routes>
     </BrowserRouter>
   );
