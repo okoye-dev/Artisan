@@ -2,6 +2,8 @@ import { FC, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import man from "../assets/man.jpeg";
 import { useNavigate } from "react-router-dom";
+import Popup from "../components/Popup";
+import PaymentWarning from "../components/PaymentWarning";
 
 interface IProps {}
 
@@ -12,25 +14,12 @@ const YourOrder: FC<IProps> = () => {
     setOpen(false);
     navigate("/payment-options");
   };
+
   return (
     <>
-      <div
-        className={`z-10 absolute w-screen bg-white/50 backdrop-blur-sm justify-center items-center ${
-          open ? "flex" : "hidden"
-        }`}
-      >
-        <span className="bg-gray-200 p-6 w-[22rem] h-fit flex flex-col gap-3 justify-center items-center rounded-md border-2 border-black">
-          Please be advised that you are required to notify us of any
-          cancellations within a 24-hour window prior to your scheduled
-          appointment.
-          <button
-            onClick={() => nextPage()}
-            className="text-white shadow-md hover:opacity-85 bg-blue rounded-2xl px-4 py-2 font-semibold"
-          >
-            I agree
-          </button>
-        </span>
-      </div>
+      <Popup openMe={open} closeMe={nextPage}>
+        <PaymentWarning closeMe={nextPage} />
+      </Popup>
 
       <div className="flex flex-col gap-3 p-3 ipad:py-8 ipad:px-12 lg:px-28 w-full overflow-hidden">
         <header className="flex items-center gap-5 font-bold text-lg">

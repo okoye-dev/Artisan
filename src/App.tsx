@@ -9,6 +9,7 @@ import Nearby from "./pages/Nearby";
 import ArtisanProfile from "./pages/ArtisanProfile";
 import YourOrder from "./pages/YourOrder";
 import PaymentOptions from "./pages/PaymentOptions";
+import PaymentSuccessful from "./pages/PaymentSuccessful";
 
 interface IAppProps {}
 
@@ -25,6 +26,7 @@ const App: FC<IAppProps> = () => {
         <Route path="/artisan-profile" element={<ArtisanProfile />} />
         <Route path="/your-order" element={<YourOrder />} />
         <Route path="/payment-options" element={<PaymentOptions />} />
+        <Route path="/payment-successful" element={<PaymentSuccessful />} />
       </Routes>
     </BrowserRouter>
   );
