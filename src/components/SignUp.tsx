@@ -4,9 +4,14 @@ import Button from "./Button";
 import facebook from "../assets/svgs/facebook.svg";
 import google from "../assets/svgs/google.svg";
 import apple from "../assets/svgs/apple.svg";
+import { useNavigate } from "react-router-dom";
 
 const SignUp: FC = () => {
   const signInOptions: string[] = [facebook, google, apple];
+  const navigate = useNavigate();
+  const goToRegistration = () => {
+    navigate("/registration");
+  };
   return (
     <div className={`w-full flex flex-col md:w-[30rem] lg:w-[36rem]`}>
       <InputField title="Email address" placeHolder="Your email" />
@@ -21,7 +26,7 @@ const SignUp: FC = () => {
         viewPassword={true}
       />
       <div className="w-full my-10 px-20 flex justify-center items-center">
-        <Button btnText="Sign up" />
+        <Button btnText="Sign up" onClick={goToRegistration} />
       </div>
       <p className="flex flex-col w-full text-center text-black/70 text-xs">
         Sign up with

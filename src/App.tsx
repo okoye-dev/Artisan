@@ -12,6 +12,7 @@ import PaymentOptions from "./pages/PaymentOptions";
 import PaymentSuccessful from "./pages/PaymentSuccessful";
 import SignIn from "./components/SignIn";
 import ArtisanSignIn from "./pages/ArtisanSignIn";
+import Registration from "./pages/Registration";
 
 interface IAppProps {}
 
@@ -22,6 +23,7 @@ const App: FC<IAppProps> = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/registration" element={<Registration />} />
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/artisan-signin" element={<ArtisanSignIn />} />
         <Route path="/home" element={<HomePage />} />
