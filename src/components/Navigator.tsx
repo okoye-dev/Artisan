@@ -10,14 +10,14 @@ const Navigator: FC = () => {
     <div className="fixed bottom-5 bg-gradient-to-b from-black/90 to-purple-950/80 rounded-full shadow-lg w-fit flex justify-center items-center py-2 px-6 gap-5 text-white text-[0.65rem] ipad:text-xs backdrop-blur-md">
       <button
         onClick={() => navigate("/home")}
-        className="flex flex-col justify-center items-center p-1"
+        className="flex flex-col justify-center items-center p-1 hover:text-white/85"
       >
         <img src={home} alt="home" width={"12px"} />
         Home
       </button>
       <button
         onClick={() => navigate("/categories")}
-        className="flex flex-col justify-center items-center p-1"
+        className="flex flex-col justify-center items-center p-1 hover:text-white/85"
       >
         <img
           src={categories}
@@ -29,7 +29,7 @@ const Navigator: FC = () => {
       </button>
       <button
         onClick={() => navigate("/nearby")}
-        className="flex flex-col justify-center items-center p-1"
+        className="flex flex-col justify-center items-center p-1 hover:text-white/85"
       >
         <img src={nearby} alt="nearby" width={"12px"} />
         Nearby

@@ -105,9 +105,24 @@ const Landing: FC = () => {
             >
               <IoMdClose size={"2rem"} className="md:hidden" />
             </span>
-            <a className="text-black/80 font-bold">Home</a>
-            <a className="text-black/80 font-bold">Categories</a>
-            <a className="text-black/80 font-bold">Nearby</a>
+            <a
+              onClick={() => navigate("/home")}
+              className="text-black/80 font-bold hover:text-blue"
+            >
+              Home
+            </a>
+            <a
+              onClick={() => navigate("/categories")}
+              className="text-black/80 font-bold hover:text-blue"
+            >
+              Categories
+            </a>
+            <a
+              onClick={() => navigate("/nearby")}
+              className="text-black/80 font-bold hover:text-blue"
+            >
+              Nearby
+            </a>
           </nav>
           <button className="sm:hidden ipad:hidden transition-all duration-300 ease-in-out bg-gradient-to-tr from-black via-black via-[40%] to-purple-700 rounded-full px-6 py-3 hover:scale-105 text-white">
             Download Now

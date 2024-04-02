@@ -13,7 +13,7 @@ const Home: FC = () => {
 
   function artisanActive() {
     isActive === "artisan"
-      ? navigate("/home", { state: "artisan" })
+      ? navigate("/artisan-signin")
       : setIsActive("artisan");
   }
   
