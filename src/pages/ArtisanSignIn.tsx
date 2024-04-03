@@ -11,7 +11,7 @@ const ArtisanSignIn: FC<IProps> = () => {
     setPage(page);
   };
   return (
-    <div className="py-14 px-12 w-full flex flex-col justify-center items-center">
+    <div className="py-14 px-12 w-full h-screen flex flex-col justify-center items-center">
       <p className="font-extrabold text-2xl"> ARTISAN</p>
       <ToggleSigning makeVisible={makePageVisible} />
       {page == "signin" ? <SignIn /> : <SignUp />}
