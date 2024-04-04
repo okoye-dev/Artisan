@@ -2,9 +2,10 @@ import { FC } from "react";
 import ArtisanNearbyCard from "../components/ArtisanNearbyCard";
 import Navigator from "../components/Navigator";
 import chairArtisan from "../assets/chairArtisan.jpeg";
+import useEmptyArray from "@/components/hooks/useEmptyArray";
 
 const Nearby: FC = () => {
-  const iterate = [...Array(6).keys()];
+  const array = useEmptyArray(6);
   return (
     <div className="mx-5">
       <div className="flex justify-center lg:justify-start items-center flex-col ipad:flex-row ipad:gap-10 overflow-hidden ipad:pt-5 md:pt-0 lg:mx-5">
@@ -16,7 +17,7 @@ const Nearby: FC = () => {
         <div className="w-full md:w-[600px] bg-gray-300 h-[100px] lg:h-[200px] rounded-xl border-2 border-black mb-5"></div>
       </div>
       <section className="flex flex-col justify-center items-center gap-5 mb-12 w-full">
-        {iterate.map(() => (
+        {array.map(() => (
           <ArtisanNearbyCard
             image={chairArtisan}
             title="Kleen cut"

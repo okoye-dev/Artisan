@@ -3,6 +3,8 @@ import barber from "../assets/barber.jpeg";
 import location from "../assets/svgs/location.svg";
 import star from "../assets/svgs/star.svg";
 import starYellow from "../assets/svgs/star-yellow.svg";
+import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 interface CarouselItemProps {
   title: string;
@@ -41,8 +43,8 @@ const CarouselItem: FC<CarouselItemProps> = ({
             <p className="text-black/70 text-[0.65rem]">{address} </p>
           </div>
         </div>
-        <button className="bg-blue rounded-full px-4 py-2 w-fit my-2 text-white text-xs">
-          Book now
+        <button className="w-fit my-2 text-white text-xs">
+          <Button btnText="Book now" />
         </button>
       </section>
     </div>
