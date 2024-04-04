@@ -1,26 +1,11 @@
-import { FC, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { FC } from "react";
 import search from "../assets/svgs/search.svg";
 import AppointmentCarousel from "../components/AppointmentCarousel";
 import Navigator from "../components/Navigator";
 
 const componentName: FC = () => {
-  const location = useLocation();
-  const loggedInAs = location.state;
-  const [showElement, setShowElement] = useState(true);
-  useEffect(() => {
-    setTimeout(function () {
-      setShowElement(false);
-    }, 3000);
-  }, []);
-
   return (
     <div className="flex flex-col justify-center items-center">
-      {showElement && (
-        <div className="absolute top-2 w-full flex justify-center items-center text-green-600 text-xs">
-          Logged in as {loggedInAs}
-        </div>
-      )}
       <div className="flex justify-center lg:justify-start items-center flex-col ipad:flex-row ipad:gap-10 overflow-hidden ipad:pt-5 md:pt-0 lg:mx-5 pb-5 mb-[20vh]">
         <header className="sm:w-full ipad:w-fit text-lg sm:ml-24 ipad:mx-12 font-semibold my-5">
           Home
