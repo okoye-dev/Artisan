@@ -1,9 +1,9 @@
 import { FC, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import man from "../assets/man.jpeg";
 import { useNavigate } from "react-router-dom";
 import Popup from "../components/Popup";
 import PaymentWarning from "../components/PaymentWarning";
+import ArtisanDisplayCard from "@/components/ArtisanDisplayCard";
 
 interface IProps {}
 
@@ -26,15 +26,7 @@ const YourOrder: FC<IProps> = () => {
           <IoIosArrowBack size={"1.25rem"} />
           Your Order
         </header>
-        <section className="my-5 px-3 flex gap-3 justify-start items-center">
-          <div className="rounded-full overflow-hidden flex justify-center items-center w-20 lg:w-28 aspect-square bg-blue">
-            <img src={man} alt="img" className="scale-[1.65]" />
-          </div>
-          <div>
-            <p className="font-bold text-2xl lg:text-2xl">Emeka</p>
-            <p className="opacity-50 text-sm lg:text-lg ml-1">Kleen cut</p>
-          </div>
-        </section>
+        <ArtisanDisplayCard />
         <p className="text-xl w-full flex justify-center">
           28th Jan 2024 at 3pm
         </p>

@@ -4,6 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useLocation, useNavigate } from "react-router-dom";
 import checkmark from "../assets/svgs/check.svg";
 import AvailableProfessionals from "../components/AvailableProfessionals";
+import ServicesPortfolioReviews from "@/components/ServicesPortfolioReviews";
 
 interface ProfileProps {}
 
@@ -12,11 +13,6 @@ const ArtisanProfile: FC<ProfileProps> = () => {
   const navigate = useNavigate();
   const img = location.state.image;
   const title = location.state.title;
-
-  const [activeSection, setActiveSection] = useState(2);
-  const toggleSection = (i: number) => {
-    setActiveSection(i);
-  };
 
   const [availableProfessionals, setAvailableProfessionals] = useState(false);
 
@@ -62,39 +58,12 @@ const ArtisanProfile: FC<ProfileProps> = () => {
             neque consequatur laboriosam?
           </p>
         </section>
+        <section className="w-full flex justify-center items-center">
+          <ServicesPortfolioReviews />
+        </section>
         <div className="w-full flex justify-center items-center my-1">
           <Navigator />
         </div>
-        <section className="w-full flex justify-center items-center">
-          <div className="relative w-full lg:w-4/5 ipad:text-lg my-5 flex justify-around font-bold">
-            <button
-              onClick={() => toggleSection(0)}
-              className="w-full flex justify-center items-center"
-            >
-              Services
-            </button>
-            <button
-              onClick={() => toggleSection(1)}
-              className="w-full flex justify-center items-center"
-            >
-              Portfolio
-            </button>
-            <button
-              onClick={() => toggleSection(2)}
-              className="w-full flex justify-center items-center"
-            >
-              Reviews
-            </button>
-            <span className="absolute h-1 w-full bg-black/20 top-6 ipad:top-8 rounded-full"></span>
-            <span
-              className={`absolute h-1 w-1/3 bg-blue top-6 ipad:top-8 rounded-full transition-all duration-300 ease-in-out ${
-                activeSection == 0 && "left-0"
-              } ${activeSection == 1 && "left-1/3"} ${
-                activeSection == 2 && "left-2/3"
-              }`}
-            ></span>
-          </div>
-        </section>
       </div>
     </div>
   );
