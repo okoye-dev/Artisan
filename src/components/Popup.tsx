@@ -2,6 +2,7 @@ import { FC, ReactNode } from "react";
 
 interface PopupProps {
   openMe?: boolean;
+  closeMe?: () => void;
   children?: ReactNode;
 }
 
