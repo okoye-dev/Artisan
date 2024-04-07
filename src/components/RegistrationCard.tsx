@@ -8,7 +8,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import tick from "../assets/svgs/tickRegistration.svg";
 
 interface IProps {}
 

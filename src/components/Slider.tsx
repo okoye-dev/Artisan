@@ -7,8 +7,6 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 interface SliderProps {
   images: string[];
 }
-interface Prop {}
-
 const componentName: FC<SliderProps> = ({ images }: SliderProps) => {
   const slider = useRef<any>(null);
   const settings = {

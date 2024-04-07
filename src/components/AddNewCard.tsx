@@ -2,7 +2,7 @@ import { FC } from "react";
 
 interface IProps {}
 
-const AddNewCard: FC<IProps> = (props) => {
+const AddNewCard: FC<IProps> = () => {
   return (
     <div className="flex flex-col gap-5 w-full text-sm my-3">
       <section className="font-semibold flex flex-col gap-2 w-full">
