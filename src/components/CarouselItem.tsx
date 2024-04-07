@@ -4,7 +4,6 @@ import location from "../assets/svgs/location.svg";
 import star from "../assets/svgs/star.svg";
 import starYellow from "../assets/svgs/star-yellow.svg";
 import Button from "./Button";
-import { useNavigate } from "react-router-dom";
 
 interface CarouselItemProps {
   title: string;

@@ -1,21 +1,22 @@
 import { FC, useState } from "react";
 
-interface IProps {}
+interface IProps {
+  onClick: (i: number) => void;
+}
 
-const ServicesPortfolioReviews: FC<IProps> = () => {
-  const [activeSection, setActiveSection] = useState(2);
+const ServicesPortfolioReviews: FC<IProps> = ({ onClick }: IProps) => {
+  const [activeSection, setActiveSection] = useState(0);
   const toggleSection = (i: number) => {
     setActiveSection(i);
+    onClick(i);
   };
-  const changeSection = (n: number) => {
-    toggleSection(n);
-  };
+
   const sections = ["Services", "Portfolio", "Reviews"];
   return (
     <div className="relative w-full lg:w-4/5 ipad:text-lg my-5 flex justify-around font-bold">
       {sections.map((section, index) => (
         <button
-          onClick={() => changeSection(index)}
+          onClick={() => toggleSection(index)}
           className="w-full flex justify-center items-center"
         >
           {section}

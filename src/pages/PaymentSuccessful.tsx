@@ -4,9 +4,7 @@ import waves from "../assets/svgs/waves.svg";
 import cancel from "../assets/svgs/cancel.svg";
 import { useNavigate } from "react-router-dom";
 
-interface IProps {}
-
-const PaymentSuccessful: FC<IProps> = () => {
+const PaymentSuccessful: FC = () => {
   const navigate = useNavigate();
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center gap-3 font-semibold overflow-hidden">

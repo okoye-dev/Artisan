@@ -24,7 +24,7 @@ const InputField: FC<InputFieldProps> = ({
         />
         {viewPassword && (
           <button className="flex justify-evenly items-center bg-blue z-10">
-            <img src={eye} alt="view" className="absolute top-9 right-6" />
+            <img src={eye} alt="view" className="absolute top-8 right-6" />
           </button>
         )}
       </section>

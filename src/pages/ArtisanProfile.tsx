@@ -5,6 +5,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 import checkmark from "../assets/svgs/check.svg";
 import AvailableProfessionals from "../components/AvailableProfessionals";
 import ServicesPortfolioReviews from "@/components/ServicesPortfolioReviews";
+import Services from "@/components/Services";
+import Portfolio from "@/components/Portfolio";
+import Reviews from "@/components/Reviews";
 
 interface ProfileProps {}
 
@@ -14,10 +17,14 @@ const ArtisanProfile: FC<ProfileProps> = () => {
   const img = location.state.image;
   const title = location.state.title;
 
+  const [activeSection, setActiveSection] = useState(0);
+  const toggleSection = (i: number) => {
+    setActiveSection(i);
+  };
   const [availableProfessionals, setAvailableProfessionals] = useState(false);
 
   return (
-    <div className="relative overflow-hidden h-screen">
+    <div className="relative overflow-hidden pb-20">
       <div
         onClick={() => setAvailableProfessionals(false)}
         className={`absolute bg-white/30 backdrop-blur-sm w-full h-full z-30 ${
@@ -59,8 +66,13 @@ const ArtisanProfile: FC<ProfileProps> = () => {
           </p>
         </section>
         <section className="w-full flex justify-center items-center">
-          <ServicesPortfolioReviews />
+          <ServicesPortfolioReviews onClick={toggleSection} />
         </section>
+        {activeSection == 0 && <Services />}
+        {activeSection == 1 && <Portfolio />}
+        <div className="flex justify-center items-center">
+          {activeSection == 2 && <Reviews />}
+        </div>
         <div className="w-full flex justify-center items-center my-1">
           <Navigator />
         </div>

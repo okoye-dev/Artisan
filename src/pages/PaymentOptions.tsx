@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import CreditDebitCards from "../components/CreditDebitCards";
 import Popup from "../components/Popup";
 import AddNewCard from "../components/AddNewCardUI";
+import Button from "@/components/Button";
 
 interface IProps {}
 
@@ -48,14 +49,12 @@ const PaymentOptions: FC<IProps> = () => {
             N1,000
           </div>
           <div className="flex justify-center">
-            <button
+            <Button
+              btnText="Proceed to pay"
               onClick={() => {
                 navigate("/payment-successful");
               }}
-              className="shadow-md hover:opacity-85 bg-blue text-white py-3 px-6 rounded-2xl font-bold"
-            >
-              Proceed to pay
-            </button>
+            />
           </div>
         </section>
       </div>
